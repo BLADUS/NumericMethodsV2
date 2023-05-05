@@ -24,7 +24,7 @@ public class AuxiliaryFunctions {
             throw ex;
         }
     }
-
+    //Правильная обработка функции
     public static DoubleUnaryOperator createFunction(String function) throws ScriptException {
         function = function.replaceAll("(\\d+)\\^(\\d+)", "Math.pow($1, $2)");
         function = function.replaceAll("x\\^(\\d+)", "Math.pow(x, $1)");
