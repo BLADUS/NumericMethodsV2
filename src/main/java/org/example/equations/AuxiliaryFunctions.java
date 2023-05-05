@@ -17,14 +17,22 @@ import java.util.function.DoubleUnaryOperator;
 public class AuxiliaryFunctions {
     //Метод который считает значение фун-ии при переданном аргументе
     public static double evaluate(DoubleUnaryOperator function, double x) {
-        return function.applyAsDouble(x);
+        try {
+            return function.applyAsDouble(x);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            throw ex;
+        }
     }
 
     public static DoubleUnaryOperator createFunction(String function) throws ScriptException {
+        function = function.replaceAll("(\\d+)\\^(\\d+)", "Math.pow($1, $2)");
+        function = function.replaceAll("x\\^(\\d+)", "Math.pow(x, $1)");
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("js");
         engine.eval("function f(x) { return " + function + "; }");
         Invocable invocable = (Invocable) engine;
+        String finalFunction = function;
         return x -> {
             try {
                 Object result = invocable.invokeFunction("f", x);
@@ -34,7 +42,7 @@ public class AuxiliaryFunctions {
                     throw new IllegalArgumentException("Function result is not a number");
                 }
             } catch (ScriptException | NoSuchMethodException ex) {
-                throw new IllegalArgumentException("Invalid function: " + function, ex);
+                throw new IllegalArgumentException("Invalid function: " + finalFunction, ex);
             }
         };
     }
