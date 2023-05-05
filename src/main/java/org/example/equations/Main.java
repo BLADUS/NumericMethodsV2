@@ -10,13 +10,6 @@ import java.util.function.DoubleUnaryOperator;
  */
 public class Main {
     public static void main(String[] args) throws ScriptException {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите функцию (например, x -> x * x): ");
-        String functionString = scanner.nextLine();
-        System.out.print("Введите значение аргумента: ");
-        double x = scanner.nextDouble();
-        DoubleUnaryOperator function = AuxiliaryFunctions.createFunction(functionString);
-        double result = AuxiliaryFunctions.evaluate(function, x);
-        System.out.println("Значение функции при x=" + x + ": " + result);
+        AuxiliaryFunctions.evaluate();
     }
 }

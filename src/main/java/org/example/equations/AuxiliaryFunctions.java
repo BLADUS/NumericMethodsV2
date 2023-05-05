@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.function.DoubleUnaryOperator;
 
 /**
@@ -16,14 +17,22 @@ import java.util.function.DoubleUnaryOperator;
  */
 public class AuxiliaryFunctions {
     //Метод который считает значение фун-ии при переданном аргументе
-    public static double evaluate(DoubleUnaryOperator function, double x) {
+    public static double evaluate() throws ScriptException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите функцию (например, x -> x * x): ");
+        String functionString = scanner.nextLine();
+        System.out.print("Введите значение аргумента: ");
+        double x = scanner.nextDouble();
+        DoubleUnaryOperator function = createFunction(functionString);
         try {
-            return function.applyAsDouble(x);
+            double result = function.applyAsDouble(x);
+            return result;
         } catch (Exception ex) {
             ex.printStackTrace();
             throw ex;
         }
     }
+
     //Правильная обработка функции
     public static DoubleUnaryOperator createFunction(String function) throws ScriptException {
         function = function.replaceAll("(\\d+)\\^(\\d+)", "Math.pow($1, $2)");
