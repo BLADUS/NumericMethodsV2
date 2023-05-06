@@ -17,8 +17,7 @@ import java.util.function.DoubleUnaryOperator;
  */
 public class AuxiliaryFunctions {
     //Метод который считает значение фун-ии при переданном аргументе
-    public static double evaluate(String functionString) throws ScriptException {
-        double x = inputDouble("Введите значение аргумента: ");
+    public static double evaluate(String functionString, double x) throws ScriptException {
         DoubleUnaryOperator function = createFunction(functionString);
         try {
             double result = function.applyAsDouble(x);
