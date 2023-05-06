@@ -17,12 +17,8 @@ import java.util.function.DoubleUnaryOperator;
  */
 public class AuxiliaryFunctions {
     //Метод который считает значение фун-ии при переданном аргументе
-    public static double evaluate() throws ScriptException {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите функцию (например, x -> x * x): ");
-        String functionString = scanner.nextLine();
-        System.out.print("Введите значение аргумента: ");
-        double x = scanner.nextDouble();
+    public static double evaluate(String functionString) throws ScriptException {
+        double x = inputDouble("Введите значение аргумента: ");
         DoubleUnaryOperator function = createFunction(functionString);
         try {
             double result = function.applyAsDouble(x);
@@ -54,5 +50,18 @@ public class AuxiliaryFunctions {
                 throw new IllegalArgumentException("Invalid function: " + finalFunction, ex);
             }
         };
+    }
+
+    public static String writeFunction(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите функцию (например, x -> x * x): ");
+        String functionString = scanner.nextLine();
+        return functionString;
+    }
+
+    public static double inputDouble(String text){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(text);
+        return scanner.nextDouble();
     }
 }
