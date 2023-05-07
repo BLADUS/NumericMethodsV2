@@ -9,19 +9,16 @@ import static org.example.equations.AuxiliaryFunctions.*;
  * @date 05.05.2023 20:29
  */
 public class DividingSegmentInHalf {
-    private static final double EPS = writeEPS();
-    private final static String functionString = AuxiliaryFunctions.writeFunction();
-
-    public static double bisection(String functionString) throws ScriptException {
-        double leftBoundary = inputDouble("Введите первую границу: ");
-        double rightBoundary = inputDouble("Введите первую границу: ");
+    public static double bisection(String functionString,double EPS) throws ScriptException {
+        double leftBoundary = inputDouble("Введите левую границу: ");
+        double rightBoundary = inputDouble("Введите правую границу: ");
 
         double valueLeftBoundFunction = evaluate(functionString, leftBoundary);
         double valueRightBoundFunction = evaluate(functionString, rightBoundary);
 
         if (valueLeftBoundFunction * valueRightBoundFunction > 0) {
             System.out.println("На заданном интервале нет корней!");
-            bisection(functionString);
+            bisection(functionString,EPS);
         }
 
         double x0 = (leftBoundary + rightBoundary) / 2;
@@ -37,8 +34,7 @@ public class DividingSegmentInHalf {
         return x0;
     }
 
-    private static double writeEPS() {
+    public static double writeEPS() {
         return inputDouble("Введите точность: ");
     }
-
 }

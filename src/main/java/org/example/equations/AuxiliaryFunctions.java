@@ -4,10 +4,6 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.function.DoubleUnaryOperator;
 
@@ -30,8 +26,10 @@ public class AuxiliaryFunctions {
 
     //Правильная обработка функции
     public static DoubleUnaryOperator createFunction(String function) throws ScriptException {
-        function = function.replaceAll("(\\d+)\\^(\\d+)", "Math.pow($1, $2)");
+        function = function.replaceAll("(\\d+(,\\d+)?)\\^(\\d+)", "Math.pow($1, $3)");
+        function = function.replaceAll("(\\d+(,\\d+)?)x", "$1*x");
         function = function.replaceAll("x\\^(\\d+)", "Math.pow(x, $1)");
+        function = function.replaceAll("e", "2.7");
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("js");
         engine.eval("function f(x) { return " + function + "; }");
