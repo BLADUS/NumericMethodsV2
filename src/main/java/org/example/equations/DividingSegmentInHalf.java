@@ -11,14 +11,11 @@ import static org.example.equations.AuxiliaryFunctions.*;
  * @date 05.05.2023 20:29
  */
 public class DividingSegmentInHalf {
-    public static double bisection(String functionString, double EPS) throws ScriptException {
+    public static double bisection(String functionString, double EPS, double[] limits) throws ScriptException {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Введите левую границу: ");
-        double leftBoundary = scanner.nextDouble();
-
-        System.out.print("Введите правую границу: ");
-        double rightBoundary = scanner.nextDouble();
+        double leftBoundary = limits[0];
+        double rightBoundary = limits[1];
 
         double valueLeftBoundFunction = evaluate(functionString, leftBoundary);
         double valueRightBoundFunction = evaluate(functionString, rightBoundary);

@@ -1,9 +1,6 @@
 package org.example.equations;
 
-import javax.script.Invocable;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import javax.script.*;
 import java.util.Scanner;
 import java.util.function.DoubleUnaryOperator;
 
@@ -49,14 +46,14 @@ public class AuxiliaryFunctions {
         };
     }
 
-    public static String writeFunction(){
+    public static String writeFunction() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите функцию (например, x^3+9*x-11): ");
         String functionString = scanner.nextLine();
         return functionString;
     }
 
-    public static double inputDouble(String text){
+    public static double inputDouble(String text) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(text);
         return scanner.nextDouble();
@@ -71,5 +68,14 @@ public class AuxiliaryFunctions {
             scanner.next(); // Очищаем некорректный ввод
         }
         return scanner.nextDouble();
+    }
+
+    public static double[] setLimits() {
+        double[] limits = new double[2];
+
+        limits[0] = inputDouble("Введите левую границу");
+        limits[1] = inputDouble("Введите правую границу");
+
+        return limits;
     }
 }
