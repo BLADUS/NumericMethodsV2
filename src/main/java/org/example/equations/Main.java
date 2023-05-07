@@ -4,7 +4,7 @@ import javax.script.ScriptException;
 import java.util.Scanner;
 
 import static org.example.equations.AuxiliaryFunctions.*;
-import static org.example.equations.DividingSegmentInHalf.writeEPS;
+import static org.example.equations.AuxiliaryFunctions.writeEPS;
 
 /**
  * @author Vladislav Osada
@@ -33,7 +33,7 @@ public class Main {
             }
             case 3: {
                 EPS = writeEPS();
-                DividingSegmentInHalf.bisection(functionString, EPS);
+                System.out.println(DividingSegmentInHalf.bisection(functionString, EPS));
                 break;
             }
         }

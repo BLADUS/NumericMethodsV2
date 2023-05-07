@@ -51,7 +51,7 @@ public class AuxiliaryFunctions {
 
     public static String writeFunction(){
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите функцию (например, x -> x * x): ");
+        System.out.print("Введите функцию (например, x^3+9*x-11): ");
         String functionString = scanner.nextLine();
         return functionString;
     }
@@ -59,6 +59,17 @@ public class AuxiliaryFunctions {
     public static double inputDouble(String text){
         Scanner scanner = new Scanner(System.in);
         System.out.println(text);
+        return scanner.nextDouble();
+    }
+
+    public static double writeEPS() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите точность (EPS): ");
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Ошибка: введите корректное значение точности (EPS)!");
+            scanner.next(); // Очищаем некорректный ввод
+        }
         return scanner.nextDouble();
     }
 }
