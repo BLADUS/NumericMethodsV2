@@ -9,7 +9,6 @@ import java.util.function.DoubleUnaryOperator;
  * @date 05.05.2023 20:45
  */
 public class AuxiliaryFunctions {
-
     public static double inputDouble(String text) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(text);

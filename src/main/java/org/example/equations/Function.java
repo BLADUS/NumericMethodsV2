@@ -52,7 +52,6 @@ public class Function {
     public static String writeFunction() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите функцию (например, x^3+9*x-11): ");
-        String functionString = scanner.nextLine();
-        return functionString;
+        return scanner.nextLine();
     }
 }

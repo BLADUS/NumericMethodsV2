@@ -1,17 +1,16 @@
-package org.example.equations;
+package org.example.equations.MethodsSolvingEquations;
 
 import javax.script.ScriptException;
 
 import java.util.Scanner;
 
-import static org.example.equations.AuxiliaryFunctions.*;
 import static org.example.equations.Function.evaluate;
 
 /**
  * @author Vladislav Osada
  * @date 05.05.2023 20:29
  */
-public class DividingSegmentInHalf {
+public class SolvingEquationsMethod {
     public static double bisection(String functionString, double EPS, double[] limits) throws ScriptException {
         Scanner scanner = new Scanner(System.in);
 

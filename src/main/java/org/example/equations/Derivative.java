@@ -96,7 +96,7 @@ public class Derivative {
         return c == '+' || c == '-' || c == '*' || c == '^';
     }
 
-    private static String takeDerivative(String functionString) {
+    public static String takeDerivative(String functionString) {
         List<Double> coefficients = getCoefficients(functionString);
         List<Integer> degrees = getDegrees(functionString);
         List<Character> operationSigns = getOperationSigns(functionString);

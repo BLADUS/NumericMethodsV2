@@ -1,4 +1,4 @@
-package org.example.equations;
+package org.example.equations.MethodsSolvingEquations;
 
 import javax.script.ScriptException;
 
