@@ -5,6 +5,7 @@ import javax.script.ScriptException;
 import java.util.Scanner;
 
 import static org.example.equations.AuxiliaryFunctions.*;
+import static org.example.equations.Function.evaluate;
 
 /**
  * @author Vladislav Osada

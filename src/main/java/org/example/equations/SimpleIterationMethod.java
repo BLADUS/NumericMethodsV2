@@ -2,7 +2,7 @@ package org.example.equations;
 
 import javax.script.ScriptException;
 
-import static org.example.equations.AuxiliaryFunctions.evaluate;
+import static org.example.equations.Function.evaluate;
 
 /**
  * @author Vladislav Osada

@@ -5,6 +5,8 @@ import java.util.Scanner;
 
 import static org.example.equations.AuxiliaryFunctions.*;
 import static org.example.equations.AuxiliaryFunctions.writeEPS;
+import static org.example.equations.Function.evaluate;
+import static org.example.equations.Function.writeFunction;
 
 /**
  * @author Vladislav Osada
