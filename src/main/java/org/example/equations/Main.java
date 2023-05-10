@@ -57,6 +57,10 @@ public class Main {
                 System.out.println(NewtonMethod.secant(functionString,EPS,limits));
                 break;
             }
+            default:{
+                mainMenu();
+                break;
+            }
 
         }
         mainMenu();
