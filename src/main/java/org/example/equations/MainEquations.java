@@ -7,8 +7,8 @@ import org.example.equations.MethodsSolvingEquations.SimpleIterationMethod;
 import javax.script.ScriptException;
 import java.util.Scanner;
 
-import static org.example.equations.AuxiliaryFunctions.*;
-import static org.example.equations.AuxiliaryFunctions.writeEPS;
+import static org.example.AuxiliaryFunctions.*;
+import static org.example.AuxiliaryFunctions.writeEPS;
 import static org.example.equations.Function.evaluate;
 import static org.example.equations.Function.writeFunction;
 
@@ -16,7 +16,7 @@ import static org.example.equations.Function.writeFunction;
  * @author Vladislav Osada
  * @date 05.05.2023 20:28
  */
-public class Main {
+public class MainEquations {
     static String functionString = writeFunction();
     static double x;
 

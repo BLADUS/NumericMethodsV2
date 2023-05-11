@@ -2,14 +2,14 @@ package org.example.systemsLinearEquations;
 import org.example.systemsLinearEquations.MethodsSolvingSystem.GaussMethod;
 import java.util.Scanner;
 
-import static org.example.systemsLinearEquations.AuxiliaryFunctions.*;
+import static org.example.AuxiliaryFunctions.*;
 import static org.example.systemsLinearEquations.MethodsSolvingSystem.SeidelMethod.seidel;
 
 /**
  * @author Vladislav Osada
  * @date 10.05.2023 3:05
  */
-public class Main {
+public class MainSystemsLinearEquations {
     private static LinearSystem system = readSystemFromManualInput();
 
     public static void mainMenu() {

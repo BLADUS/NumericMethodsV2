@@ -1,11 +1,39 @@
-package org.example.systemsLinearEquations;
+package org.example;
+import org.example.systemsLinearEquations.LinearSystem;
+
 import java.util.Scanner;
 
 /**
  * @author Vladislav Osada
- * @date 10.05.2023 3:14
+ * @date 05.05.2023 20:45
  */
 public class AuxiliaryFunctions {
+    public static double inputDouble(String text) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(text);
+        return scanner.nextDouble();
+    }
+
+    public static double writeEPS() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите точность (EPS): ");
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Ошибка: введите корректное значение точности (EPS)!");
+            scanner.next(); // Очищаем некорректный ввод
+        }
+        return scanner.nextDouble();
+    }
+
+    public static double[] setLimits() {
+        double[] limits = new double[2];
+
+        limits[0] = inputDouble("Введите левую границу");
+        limits[1] = inputDouble("Введите правую границу");
+
+        return limits;
+    }
+
     public static LinearSystem readSystemFromManualInput() {
         Scanner scanner = new Scanner(System.in);
 
@@ -53,15 +81,5 @@ public class AuxiliaryFunctions {
             }
             System.out.printf(" = %.2f%n", rightHandSide[i]);
         }
-    }
-    public static double writeEPS() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите точность (EPS): ");
-        while (!scanner.hasNextDouble()) {
-            System.out.println("Ошибка: введите корректное значение точности (EPS)!");
-            scanner.next(); // Очищаем некорректный ввод
-        }
-        return scanner.nextDouble();
     }
 }
