@@ -5,8 +5,8 @@ package org.example.systemsLinearEquations;
  * @date 10.05.2023 3:11
  */
 public class LinearSystem {
-    private double[][] coefficients; // Матрица коэффициентов
-    private double[] rightHandSide; // Правая часть уравнений
+    private final double[][] coefficients; // Матрица коэффициентов
+    private final double[] rightHandSide; // Правая часть уравнений
 
     public LinearSystem(double[][] coefficients, double[] rightHandSide) {
         this.coefficients = coefficients;

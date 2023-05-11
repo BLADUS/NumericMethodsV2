@@ -1,7 +1,4 @@
 package org.example.systemsLinearEquations;
-
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -9,35 +6,52 @@ import java.util.Scanner;
  * @date 10.05.2023 3:14
  */
 public class AuxiliaryFunctions {
-    public static LinearSystem readSystemFromFile(String filePath) {
-        File file = new File(filePath);
-        try {
-            Scanner scanner = new Scanner(file);
+    public static LinearSystem readSystemFromManualInput() {
+        Scanner scanner = new Scanner(System.in);
 
-            // Чтение размера системы
-            int size = scanner.nextInt();
+        // Ввод размера системы
+        System.out.print("Введите размер системы (количество уравнений): ");
+        int size = scanner.nextInt();
+        scanner.nextLine(); // Чтение символа новой строки после ввода числа
+
+        // Инициализация массивов коэффициентов и правой части
+        double[][] coefficients = new double[size][size];
+        double[] rightHandSide = new double[size];
+
+        // Ввод коэффициентов матрицы A
+        System.out.println("Введите коэффициенты матрицы A:");
+        for (int i = 0; i < size; i++) {
+            System.out.printf("Уравнение %d:%n", i + 1);
+            for (int j = 0; j < size; j++) {
+                System.out.printf("Введите коэффициент A[%d][%d]: ", i, j);
+                coefficients[i][j] = scanner.nextDouble();
+            }
             scanner.nextLine(); // Чтение символа новой строки после ввода числа
 
-            // Инициализация массивов коэффициентов и правой части
-            double[][] coefficients = new double[size][size];
-            double[] rightHandSide = new double[size];
-
-            // Чтение коэффициентов матрицы A и значений правой части
-            for (int i = 0; i < size; i++) {
-                for (int j = 0; j < size; j++) {
-                    coefficients[i][j] = scanner.nextDouble();
-                }
-                rightHandSide[i] = scanner.nextDouble();
-                scanner.nextLine(); // Чтение символа новой строки после ввода числа
-            }
-
-            // Создание объекта LinearSystem
-            return new LinearSystem(coefficients, rightHandSide);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.printf("Введите значение правой части b[%d]: ", i);
+            rightHandSide[i] = scanner.nextDouble();
+            scanner.nextLine(); // Чтение символа новой строки после ввода числа
         }
 
-        return null;
+        // Создание объекта LinearSystem
+        return new LinearSystem(coefficients, rightHandSide);
     }
 
+    public static void printSystemEquations(LinearSystem system) {
+        int size = system.getSize();
+        double[][] coefficients = system.getCoefficients();
+        double[] rightHandSide = system.getRightHandSide();
+
+        System.out.println("Уравнения системы:");
+        for (int i = 0; i < size; i++) {
+            System.out.printf("Уравнение %d: ", i + 1);
+            for (int j = 0; j < size; j++) {
+                System.out.printf("%.2f * x%d", coefficients[i][j], j + 1);
+                if (j < size - 1) {
+                    System.out.print(" + ");
+                }
+            }
+            System.out.printf(" = %.2f%n", rightHandSide[i]);
+        }
+    }
 }
