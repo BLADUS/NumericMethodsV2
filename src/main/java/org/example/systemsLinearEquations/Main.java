@@ -1,8 +1,9 @@
 package org.example.systemsLinearEquations;
 import org.example.systemsLinearEquations.MethodsSolvingSystem.GaussMethod;
 import java.util.Scanner;
-import static org.example.systemsLinearEquations.AuxiliaryFunctions.printSystemEquations;
-import static org.example.systemsLinearEquations.AuxiliaryFunctions.readSystemFromManualInput;
+
+import static org.example.systemsLinearEquations.AuxiliaryFunctions.*;
+import static org.example.systemsLinearEquations.MethodsSolvingSystem.SeidelMethod.seidel;
 
 /**
  * @author Vladislav Osada
@@ -29,7 +30,6 @@ public class Main {
             }
             case 3: {
                 if (system != null) {
-                    // Решение с помощью метода Гаусса
                     double[] gaussSolution = GaussMethod.solve(system);
 
                     // Вывод результатов
@@ -37,6 +37,17 @@ public class Main {
                     for (int i = 0; i < gaussSolution.length; i++) {
                         System.out.printf("x%d = %.2f%n", i + 1, gaussSolution[i]);
                     }
+                }
+            }
+            case 4:{
+                EPS = writeEPS();
+
+                double[] solution = seidel(system, EPS);
+
+                // Вывод результатов
+                System.out.println("Решение с помощью метода Зейделя:");
+                for (int i = 0; i < solution.length; i++) {
+                    System.out.printf("x%d = %.2f%n", i + 1, solution[i]);
                 }
             }
         }

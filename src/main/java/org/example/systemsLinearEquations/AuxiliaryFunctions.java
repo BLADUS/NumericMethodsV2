@@ -54,4 +54,14 @@ public class AuxiliaryFunctions {
             System.out.printf(" = %.2f%n", rightHandSide[i]);
         }
     }
+    public static double writeEPS() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите точность (EPS): ");
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Ошибка: введите корректное значение точности (EPS)!");
+            scanner.next(); // Очищаем некорректный ввод
+        }
+        return scanner.nextDouble();
+    }
 }
