@@ -1,4 +1,4 @@
-package org.example.equations;
+package org.example.Integrals;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
@@ -51,7 +51,7 @@ public class Function {
 
     public static String writeFunction() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите функцию (например, x^3+9*x^1-11): ");
+        System.out.print("Введите функцию (например, x^3+9*x-11): ");
         return scanner.nextLine();
     }
 }

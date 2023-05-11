@@ -1,10 +1,10 @@
-package org.example.equations.MethodsSolvingEquations;
+package org.example.Equations.MethodsSolvingEquations;
 
 import javax.script.ScriptException;
 
 import java.util.Scanner;
 
-import static org.example.equations.Function.evaluate;
+import static org.example.Equations.Function.evaluate;
 
 /**
  * @author Vladislav Osada

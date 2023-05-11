@@ -1,11 +1,11 @@
-package org.example.systemsLinearEquations;
-import org.example.systemsLinearEquations.MethodsSolvingSystem.GaussMethod;
+package org.example.SystemsLinearEquations;
+import org.example.SystemsLinearEquations.MethodsSolvingSystem.GaussMethod;
 import java.util.Scanner;
 
 import static org.example.AuxiliaryFunctions.*;
-import static org.example.systemsLinearEquations.LinearSystem.printSystemEquations;
-import static org.example.systemsLinearEquations.LinearSystem.readSystemFromManualInput;
-import static org.example.systemsLinearEquations.MethodsSolvingSystem.SeidelMethod.seidel;
+import static org.example.SystemsLinearEquations.LinearSystem.printSystemEquations;
+import static org.example.SystemsLinearEquations.LinearSystem.readSystemFromManualInput;
+import static org.example.SystemsLinearEquations.MethodsSolvingSystem.SeidelMethod.seidel;
 
 /**
  * @author Vladislav Osada

@@ -1,12 +1,14 @@
-package org.example.integrals;
+package org.example.Integrals;
 
 import javax.script.ScriptException;
 import java.util.Scanner;
 
 import static org.example.AuxiliaryFunctions.*;
-import static org.example.equations.Function.writeFunction;
-import static org.example.integrals.MethodsCalculatingIntegrals.SimpsonMethod.integrateBySimpsonRule;
-import static org.example.integrals.MethodsCalculatingIntegrals.TrapezoidMethod.integrateByTrapezoidRule;
+import static org.example.Equations.Function.writeFunction;
+import static org.example.Integrals.MethodsCalculatingIntegrals.SimpsonMethod.integrateBySimpsonRule;
+import static org.example.Integrals.MethodsCalculatingIntegrals.TrapezoidMethod.integrateByTrapezoidRule;
+import static org.example.Integrals.MethodsErrorIntegralsMethods.ErrorByRungeRuleSimpson.estimateErrorByRungeRuleSimpson;
+import static org.example.Integrals.MethodsErrorIntegralsMethods.ErrorByRungeRuleTrapezoid.estimateErrorByRungeRuleTrapezoid;
 
 
 /**

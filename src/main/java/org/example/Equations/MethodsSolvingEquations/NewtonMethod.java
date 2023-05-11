@@ -1,10 +1,10 @@
-package org.example.equations.MethodsSolvingEquations;
+package org.example.Equations.MethodsSolvingEquations;
 
-import org.example.equations.Derivative;
+import org.example.Equations.Derivative;
 
 import javax.script.ScriptException;
 
-import static org.example.equations.Function.evaluate;
+import static org.example.Equations.Function.evaluate;
 
 /**
  * @author Vladislav Osada

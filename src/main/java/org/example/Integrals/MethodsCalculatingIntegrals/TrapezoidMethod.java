@@ -1,9 +1,9 @@
-package org.example.integrals.MethodsCalculatingIntegrals;
+package org.example.Integrals.MethodsCalculatingIntegrals;
 
 import javax.script.ScriptException;
 import java.util.function.DoubleUnaryOperator;
 
-import static org.example.integrals.Function.createFunction;
+import static org.example.Integrals.Function.createFunction;
 
 /**
  * @author Vladislav Osada

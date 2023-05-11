@@ -1,6 +1,6 @@
-package org.example.systemsLinearEquations.MethodsSolvingSystem;
+package org.example.SystemsLinearEquations.MethodsSolvingSystem;
 
-import org.example.systemsLinearEquations.LinearSystem;
+import org.example.SystemsLinearEquations.LinearSystem;
 
 /**
  * @author Vladislav Osada

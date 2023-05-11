@@ -1,4 +1,4 @@
-package org.example.equations;
+package org.example.Equations;
 
 import java.util.ArrayList;
 import java.util.List;

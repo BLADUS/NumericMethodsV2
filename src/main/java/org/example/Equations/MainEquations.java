@@ -1,16 +1,16 @@
-package org.example.equations;
+package org.example.Equations;
 
-import org.example.equations.MethodsSolvingEquations.NewtonMethod;
-import org.example.equations.MethodsSolvingEquations.SolvingEquationsMethod;
-import org.example.equations.MethodsSolvingEquations.SimpleIterationMethod;
+import org.example.Equations.MethodsSolvingEquations.NewtonMethod;
+import org.example.Equations.MethodsSolvingEquations.SolvingEquationsMethod;
+import org.example.Equations.MethodsSolvingEquations.SimpleIterationMethod;
 
 import javax.script.ScriptException;
 import java.util.Scanner;
 
 import static org.example.AuxiliaryFunctions.*;
 import static org.example.AuxiliaryFunctions.writeEPS;
-import static org.example.equations.Function.evaluate;
-import static org.example.equations.Function.writeFunction;
+import static org.example.Equations.Function.evaluate;
+import static org.example.Equations.Function.writeFunction;
 
 /**
  * @author Vladislav Osada

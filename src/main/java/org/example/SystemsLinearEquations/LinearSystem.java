@@ -1,4 +1,4 @@
-package org.example.systemsLinearEquations;
+package org.example.SystemsLinearEquations;
 
 import java.util.Scanner;
 
