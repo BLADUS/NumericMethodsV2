@@ -13,6 +13,7 @@ public class TrapezoidMethod {
     public static double integrateByTrapezoidRule(String functionString, double[] limits, int n) throws ScriptException, ScriptException {
         double a = limits[0];
         double b = limits[1];
+
         DoubleUnaryOperator function = createFunction(functionString);
         double h = (b - a) / n;
         double sum = 0.5 * (function.applyAsDouble(a) + function.applyAsDouble(b));

@@ -3,6 +3,8 @@ import org.example.systemsLinearEquations.MethodsSolvingSystem.GaussMethod;
 import java.util.Scanner;
 
 import static org.example.AuxiliaryFunctions.*;
+import static org.example.systemsLinearEquations.LinearSystem.printSystemEquations;
+import static org.example.systemsLinearEquations.LinearSystem.readSystemFromManualInput;
 import static org.example.systemsLinearEquations.MethodsSolvingSystem.SeidelMethod.seidel;
 
 /**
