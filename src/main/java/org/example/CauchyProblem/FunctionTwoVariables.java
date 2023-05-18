@@ -7,13 +7,16 @@ import javax.script.ScriptException;
 import java.util.Scanner;
 import java.util.function.DoubleBinaryOperator;
 
+/**
+ * @author Vladislav Osada
+ * @date 18.05.2023 22:03
+ */
 public class FunctionTwoVariables {
     // Вычисление значения функции при заданных аргументах x и y
     public static double evaluateFunctionTwoVariables(String functionString, double x, double y) throws ScriptException {
         DoubleBinaryOperator function = createFunction(functionString);
         try {
-            double result = function.applyAsDouble(x, y);
-            return result;
+            return function.applyAsDouble(x, y);
         } catch (Exception ex) {
             ex.printStackTrace();
             throw ex;
@@ -47,7 +50,7 @@ public class FunctionTwoVariables {
         };
     }
 
-    public static String writeFunction() {
+    public static String writeFunctionTwoVariables() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите функцию двух переменных (например,y-5x+1): ");
         return scanner.nextLine();

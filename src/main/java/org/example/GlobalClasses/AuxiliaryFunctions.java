@@ -10,7 +10,12 @@ import java.util.Scanner;
 public class AuxiliaryFunctions {
     public static double inputDouble(String text) {
         Scanner scanner = new Scanner(System.in);
+
         System.out.println(text);
+        while (!scanner.hasNextDouble()) {
+            System.out.println("Ошибка: введите корректное значение");
+            scanner.next(); // Очищаем некорректный ввод
+        }
         return scanner.nextDouble();
     }
 
