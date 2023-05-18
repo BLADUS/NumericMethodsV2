@@ -55,4 +55,10 @@ public class FunctionTwoVariables {
         System.out.print("Введите функцию двух переменных (например,y-5x+1): ");
         return scanner.nextLine();
     }
+
+    public static double writeY(double x0) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите значение y(" + x0 + "): ");
+        return scanner.nextDouble();
+    }
 }

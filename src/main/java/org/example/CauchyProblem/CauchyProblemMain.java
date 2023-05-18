@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import static org.example.CauchyProblem.FunctionTwoVariables.writeFunctionTwoVariables;
 import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.EulerMethod.euler;
+import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.ModifiedEulerMethod.modifiedEuler;
 import static org.example.GlobalClasses.AuxiliaryFunctions.inputDouble;
 import static org.example.GlobalClasses.AuxiliaryFunctions.setLimits;
 
@@ -18,6 +19,7 @@ public class CauchyProblemMain {
     private static final double[] limits = setLimits();
 
     private static final double h = inputDouble("Введите значение шага h:");
+
     public static void mainMenu() throws ScriptException {
         int point = pointList();
 
@@ -25,8 +27,12 @@ public class CauchyProblemMain {
             case 0: {
                 return;
             }
-            case 1:{
-                euler(functionString,limits,h);
+            case 1: {
+                euler(functionString, limits, h);
+                break;
+            }
+            case 2: {
+                modifiedEuler(functionString, limits, h);
                 break;
             }
         }
@@ -39,6 +45,7 @@ public class CauchyProblemMain {
         System.out.println("Выберите пункт меню: ");
         System.out.println("0. Выйти");
         System.out.println("1. Решить задачу Коши методом Эйлера");
+        System.out.println("2. Решить задачу Коши усовершеннстованным методом Эйлера");
 
         return scanner.nextInt();
     }

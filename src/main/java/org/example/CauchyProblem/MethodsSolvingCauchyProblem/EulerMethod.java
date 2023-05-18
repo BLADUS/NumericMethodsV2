@@ -6,8 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.function.DoubleBinaryOperator;
 
-import static org.example.CauchyProblem.FunctionTwoVariables.createFunction;
-import static org.example.CauchyProblem.FunctionTwoVariables.evaluateFunctionTwoVariables;
+import static org.example.CauchyProblem.FunctionTwoVariables.*;
 
 /**
  * @author Vladislav Osada
@@ -21,9 +20,7 @@ public class EulerMethod {
         double x0 = limits[0];
         double xLast = limits[1];
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите значение y(" + x0 + "): ");
-        double y0 = scanner.nextDouble();
+        double y0 = writeY(x0);
 
         yValues.add(y0);
 
