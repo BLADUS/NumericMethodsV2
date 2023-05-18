@@ -6,6 +6,7 @@ import java.util.Scanner;
 import static org.example.CauchyProblem.FunctionTwoVariables.writeFunctionTwoVariables;
 import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.EulerMethod.euler;
 import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.ModifiedEulerMethod.modifiedEuler;
+import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.RungeKutta4Method.rungeKutta4;
 import static org.example.GlobalClasses.AuxiliaryFunctions.inputDouble;
 import static org.example.GlobalClasses.AuxiliaryFunctions.setLimits;
 
@@ -35,6 +36,10 @@ public class CauchyProblemMain {
                 modifiedEuler(functionString, limits, h);
                 break;
             }
+            case 3: {
+                rungeKutta4(functionString, limits, h);
+                break;
+            }
         }
         mainMenu();
     }
@@ -46,6 +51,7 @@ public class CauchyProblemMain {
         System.out.println("0. Выйти");
         System.out.println("1. Решить задачу Коши методом Эйлера");
         System.out.println("2. Решить задачу Коши усовершеннстованным методом Эйлера");
+        System.out.println("3. Решить задачу Коши методом Рунге-Кутты 4-го порядка");
 
         return scanner.nextInt();
     }
