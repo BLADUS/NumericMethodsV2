@@ -1,8 +1,10 @@
 package org.example.CauchyProblem;
 
 import javax.script.ScriptException;
+import java.util.List;
 import java.util.Scanner;
 
+import static org.example.CauchyProblem.ErrorMethods.estimateErrorRungeRomberg;
 import static org.example.CauchyProblem.FunctionTwoVariables.writeFunctionTwoVariables;
 import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.EulerMethod.euler;
 import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.ModifiedEulerMethod.modifiedEuler;
@@ -16,6 +18,7 @@ import static org.example.GlobalClasses.AuxiliaryFunctions.setLimits;
  */
 
 public class CauchyProblemMain {
+    static List<Double> solution;
     private static final String functionString = writeFunctionTwoVariables();
     private static final double[] limits = setLimits();
 
@@ -29,15 +32,18 @@ public class CauchyProblemMain {
                 return;
             }
             case 1: {
-                euler(functionString, limits, h);
+                solution = euler(functionString, limits, h);
+                System.out.println("Погрешность " + estimateErrorRungeRomberg(solution, h));
                 break;
             }
             case 2: {
-                modifiedEuler(functionString, limits, h);
+                solution = modifiedEuler(functionString, limits, h);
+                System.out.println("Погрешность " + estimateErrorRungeRomberg(solution, h));
                 break;
             }
             case 3: {
-                rungeKutta4(functionString, limits, h);
+                solution = rungeKutta4(functionString, limits, h);
+                System.out.println("Погрешность " + estimateErrorRungeRomberg(solution, h));
                 break;
             }
         }
