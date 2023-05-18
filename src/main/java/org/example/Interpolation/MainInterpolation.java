@@ -4,7 +4,7 @@ import javax.script.ScriptException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static org.example.AuxiliaryFunctions.inputDouble;
+import static org.example.GlobalClasses.AuxiliaryFunctions.inputDouble;
 import static org.example.Interpolation.MethodsErrorInterpolationMethods.ErrorByLagrangeMethod.estimateErrorByLagrange;
 import static org.example.Interpolation.MethodsErrorInterpolationMethods.ErrorByNewtonMethod.estimateErrorByNewton;
 import static org.example.Interpolation.MethodsInterpolation.InterpolationLagrange.interpolateByLagrange;

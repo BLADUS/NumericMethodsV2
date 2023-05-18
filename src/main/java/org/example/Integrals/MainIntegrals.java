@@ -3,8 +3,8 @@ package org.example.Integrals;
 import javax.script.ScriptException;
 import java.util.Scanner;
 
-import static org.example.AuxiliaryFunctions.*;
-import static org.example.Equations.Function.writeFunction;
+import static org.example.GlobalClasses.AuxiliaryFunctions.*;
+import static org.example.GlobalClasses.Function.writeFunction;
 import static org.example.Integrals.MethodsCalculatingIntegrals.SimpsonMethod.integrateBySimpsonRule;
 import static org.example.Integrals.MethodsCalculatingIntegrals.TrapezoidMethod.integrateByTrapezoidRule;
 import static org.example.Integrals.MethodsErrorIntegralsMethods.ErrorByRungeRuleSimpson.estimateErrorByRungeRuleSimpson;

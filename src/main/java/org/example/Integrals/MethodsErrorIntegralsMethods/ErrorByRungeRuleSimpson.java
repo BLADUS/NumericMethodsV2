@@ -2,7 +2,8 @@ package org.example.Integrals.MethodsErrorIntegralsMethods;
 
 import javax.script.ScriptException;
 
-import static org.example.Integrals.Function.evaluate;
+import static org.example.GlobalClasses.Function.evaluate;
+
 
 /**
  * @author Vladislav Osada

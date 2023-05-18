@@ -1,4 +1,4 @@
-package org.example.Equations;
+package org.example.GlobalClasses;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.GlobalClasses;
 
 import java.util.Scanner;
 

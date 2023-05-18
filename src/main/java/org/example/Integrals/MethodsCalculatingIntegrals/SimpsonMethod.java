@@ -3,7 +3,8 @@ package org.example.Integrals.MethodsCalculatingIntegrals;
 import javax.script.ScriptException;
 import java.util.function.DoubleUnaryOperator;
 
-import static org.example.Integrals.Function.createFunction;
+import static org.example.GlobalClasses.Function.createFunction;
+
 
 /**
  * @author Vladislav Osada

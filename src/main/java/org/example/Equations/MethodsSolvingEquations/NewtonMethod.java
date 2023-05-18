@@ -4,7 +4,7 @@ import org.example.Equations.Derivative;
 
 import javax.script.ScriptException;
 
-import static org.example.Equations.Function.evaluate;
+import static org.example.GlobalClasses.Function.evaluate;
 
 /**
  * @author Vladislav Osada

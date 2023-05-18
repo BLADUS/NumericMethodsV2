@@ -7,10 +7,10 @@ import org.example.Equations.MethodsSolvingEquations.SimpleIterationMethod;
 import javax.script.ScriptException;
 import java.util.Scanner;
 
-import static org.example.AuxiliaryFunctions.*;
-import static org.example.AuxiliaryFunctions.writeEPS;
-import static org.example.Equations.Function.evaluate;
-import static org.example.Equations.Function.writeFunction;
+import static org.example.GlobalClasses.AuxiliaryFunctions.*;
+import static org.example.GlobalClasses.AuxiliaryFunctions.writeEPS;
+import static org.example.GlobalClasses.Function.evaluate;
+import static org.example.GlobalClasses.Function.writeFunction;
 
 /**
  * @author Vladislav Osada

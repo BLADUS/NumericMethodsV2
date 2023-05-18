@@ -4,7 +4,7 @@ import javax.script.ScriptException;
 
 import java.util.Scanner;
 
-import static org.example.Equations.Function.evaluate;
+import static org.example.GlobalClasses.Function.evaluate;
 
 /**
  * @author Vladislav Osada

@@ -2,7 +2,7 @@ package org.example.SystemsLinearEquations;
 import org.example.SystemsLinearEquations.MethodsSolvingSystem.GaussMethod;
 import java.util.Scanner;
 
-import static org.example.AuxiliaryFunctions.*;
+import static org.example.GlobalClasses.AuxiliaryFunctions.*;
 import static org.example.SystemsLinearEquations.LinearSystem.printSystemEquations;
 import static org.example.SystemsLinearEquations.LinearSystem.readSystemFromManualInput;
 import static org.example.SystemsLinearEquations.MethodsSolvingSystem.SeidelMethod.seidel;
