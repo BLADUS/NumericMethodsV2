@@ -32,7 +32,7 @@ public class MainSystemsLinearEquations {
             }
             case 3: {
                 if (system != null) {
-                    double[] gaussSolution = GaussMethod.solve(system);
+                    double[] gaussSolution = GaussMethod.gauss(system);
 
                     // Вывод результатов
                     System.out.println("Решение с помощью метода Гаусса:");
@@ -40,6 +40,7 @@ public class MainSystemsLinearEquations {
                         System.out.printf("x%d = %.2f%n", i + 1, gaussSolution[i]);
                     }
                 }
+                break;
             }
             case 4:{
                 EPS = writeEPS();

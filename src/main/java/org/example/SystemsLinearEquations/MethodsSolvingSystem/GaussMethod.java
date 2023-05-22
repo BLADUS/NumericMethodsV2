@@ -7,7 +7,7 @@ import org.example.SystemsLinearEquations.LinearSystem;
  * @date 10.05.2023 3:08
  */
 public class GaussMethod {
-    public static double[] solve(LinearSystem system) {
+    public static double[] gauss(LinearSystem system) {
         int size = system.getSize();
         double[][] coefficients = system.getCoefficients();
         double[] rightHandSide = system.getRightHandSide();

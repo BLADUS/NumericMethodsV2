@@ -7,7 +7,7 @@ import static org.example.GlobalClasses.AuxiliaryFunctions.*;
 import static org.example.GlobalClasses.Function.writeFunction;
 import static org.example.Integrals.MethodsCalculatingIntegrals.SimpsonMethod.integrateBySimpsonRule;
 import static org.example.Integrals.MethodsCalculatingIntegrals.TrapezoidMethod.integrateByTrapezoidRule;
-import static org.example.Integrals.MethodsErrorIntegralsMethods.ErrorByRungeRuleSimpson.estimateErrorByRungeRuleSimpson;
+import static org.example.Integrals.MethodsErrorIntegralsMethods.ErrorByRungeRuleSimpson.estimateErrorByRichardsonSimpson;
 import static org.example.Integrals.MethodsErrorIntegralsMethods.ErrorByRungeRuleTrapezoid.estimateErrorByRungeRuleTrapezoid;
 
 
@@ -39,8 +39,8 @@ public class MainIntegrals {
             }
             case 2: {
                 integralBySimpson = integrateBySimpsonRule(functionString, limits, NumberOfPartitions);
-                System.out.println("Интеграл по формуле трапеций: " + integralBySimpson);
-                System.out.println("Оценка погрешности по правилу Рунге: " + estimateErrorByRungeRuleSimpson(functionString, limits, NumberOfPartitions));
+                System.out.println("Интеграл по формуле Симпсона: " + integralBySimpson);
+                System.out.println("Оценка погрешности по правилу Рунге: " + estimateErrorByRichardsonSimpson(functionString, limits, NumberOfPartitions));
                 break;
             }
         }

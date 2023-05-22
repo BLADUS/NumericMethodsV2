@@ -75,7 +75,7 @@ public class MainEquations {
         System.out.println("2.Посчитать значение фун-ии при заданом аргументе");
         System.out.println("3.Найти производную");
         System.out.println("4.Решение уравнения методом бисекции");
-        System.out.println("5.Решение уравнения методом прстых итераций");
+        System.out.println("5.Решение уравнения методом простых итераций");
         System.out.println("6.Решение уравнения методом секущих");
         return scanner.nextInt();
     }
