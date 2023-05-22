@@ -1,5 +1,6 @@
 package org.example.GlobalClasses;
 
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -37,5 +38,18 @@ public class AuxiliaryFunctions {
         limits[1] = inputDouble("Введите правую границу");
 
         return limits;
+    }
+
+    // Вспомогательный метод для преобразования List<Double> в double[]
+    public static double[] toArray(List<Double> list) {
+        if (list == null) {
+            return new double[0]; // Возвращаем пустой массив, если список равен null
+        }
+
+        double[] array = new double[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            array[i] = list.get(i);
+        }
+        return array;
     }
 }
