@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="NumericMethodsV2" options="--add-exports jdk.scripting.nashorn/jdk.nashorn.internal.runtime=ALL-UNNAMED" />
+      <module name="NumericMethodsV2" options="" />
     </option>
   </component>
 </project>

@@ -20,6 +20,8 @@ public class SolvingEquationsMethod {
         double valueLeftBoundFunction = evaluate(functionString, leftBoundary);
         double valueRightBoundFunction = evaluate(functionString, rightBoundary);
 
+        int count = 0;
+
         if (valueLeftBoundFunction * valueRightBoundFunction > 0) {
             System.out.println("На заданном интервале нет корней!");
             return Double.NaN; // Возвращаем NaN, чтобы показать, что корень не найден.
@@ -28,6 +30,7 @@ public class SolvingEquationsMethod {
         double x0 = (leftBoundary + rightBoundary) / 2;
 
         while (Math.abs(rightBoundary - leftBoundary) >= EPS) {
+            count++;
             double valueX0Function = evaluate(functionString, x0);
 
             if (valueRightBoundFunction * valueX0Function >= 0) {
@@ -39,6 +42,7 @@ public class SolvingEquationsMethod {
             x0 = (leftBoundary + rightBoundary) / 2;
         }
 
+        System.out.println("Количество шагов: " + count);
         return x0;
     }
 

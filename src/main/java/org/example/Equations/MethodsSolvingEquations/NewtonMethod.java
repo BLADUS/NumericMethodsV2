@@ -29,6 +29,8 @@ public class NewtonMethod {
 
         double x0;
 
+        int count = 0;
+
         if (valueLeftBoundFunction * valueLeftBoundSecondDerivative > 0){
             x0 = leftBoundary;
         }else if (valueRightBoundFunction * valueRightBoundSecondDerivative > 0){
@@ -42,7 +44,9 @@ public class NewtonMethod {
         while(Math.abs(x - x0) >= EPS){
             x0 = x - (evaluate(functionString,x)/evaluate(firstDerivative,x));
             x = x0 - (evaluate(functionString,x0)/evaluate(firstDerivative,x0));
+            count++;
         }
+        System.out.println("Кол-во шагов: " + count);
         return x;
     }
 }

@@ -16,11 +16,13 @@ public class SimpleIterationMethod {
         double x0 = evaluate(functionString, x);
 
         while (true) {
-            if (Math.abs(x - x0) < EPS) {
+            if (Math.abs(x - x0) >= EPS) {
+                System.out.println("Количество шагов: " + i);
                 return x0;
             }
-            x = evaluate(functionString,x0);
-            x0 = evaluate(functionString,x0);
+
+            x = evaluate(functionString, x0);
+            x0 = evaluate(functionString, x);
             i++;
 
             if (i == 10000) {
