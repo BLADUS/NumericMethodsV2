@@ -10,9 +10,10 @@ import javax.script.ScriptException;
 import java.awt.*;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
+import static org.example.CauchyProblem.ErrorMethods.*;
 import static org.example.CauchyProblem.FunctionTwoVariables.writeFunctionTwoVariables;
+import static org.example.CauchyProblem.FunctionTwoVariables.writeY;
 import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.EulerMethod.euler;
 import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.ModifiedEulerMethod.modifiedEuler;
 import static org.example.CauchyProblem.MethodsSolvingCauchyProblem.RungeKutta4Method.rungeKutta4;
@@ -31,22 +32,46 @@ public class CauchyProblemMain {
 
     private static final double h = inputDouble("Введите значение шага h:");
 
+    private static double y0 = writeY(limits[0]);
+
     public static void main(String[] args) throws ScriptException {
 
         // Значения для первого метода
-        Map<String, List<Double>> resultEuler = euler(functionString, limits, h);
+        Map<String, List<Double>> resultEuler = euler(functionString, limits, h, y0);
         List<Double> x1 = resultEuler.get("x1");
         List<Double> y1 = resultEuler.get("y1");
 
 // Значения для второго метода
-        Map<String, List<Double>> resultModifiedEuler = modifiedEuler(functionString, limits, h);
+        Map<String, List<Double>> resultModifiedEuler = modifiedEuler(functionString, limits, h, y0);
         List<Double> x2 = resultModifiedEuler.get("x1");
         List<Double> y2 = resultModifiedEuler.get("y1");
 
 // Значения для третьего метода
-        Map<String, List<Double>> resultRungeKutta4 = rungeKutta4(functionString, limits, h);
+        Map<String, List<Double>> resultRungeKutta4 = rungeKutta4(functionString, limits, h, y0);
         List<Double> x3 = resultRungeKutta4.get("x1");
         List<Double> y3 = resultRungeKutta4.get("y1");
+
+        // Вывод результатов
+        System.out.println("Euler's Method:");
+        printResults(resultEuler);
+
+        System.out.println("Modified Euler's Method:");
+        printResults(resultModifiedEuler);
+
+        System.out.println("Runge-Kutta 4th Order Method:");
+        printResults(resultRungeKutta4);
+
+        // Расчет погрешности для метода Эйлера
+        double eulerError = calculateEulerError(functionString, limits, h, y0);
+        System.out.println("Погрешность метода Эйлера: " + eulerError);
+
+        // Расчет погрешности для усовершенствованного метода Эйлера
+        double modifiedEulerError = calculateModifiedEulerError(functionString, limits, h, y0);
+        System.out.println("Погрешность усовершенствованного метода Эйлера: " + modifiedEulerError);
+
+        // Расчет погрешности для метода Рунге-Кутты 4-го порядка
+        double rungeKutta4Error = calculateRungeKutta4Error(functionString, limits, h, y0);
+        System.out.println("Погрешность метода Рунге-Кутты 4-го порядка: " + rungeKutta4Error);
 
         // Создание датасета
         DefaultXYDataset dataset = new DefaultXYDataset();

@@ -5,10 +5,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import static org.example.GlobalClasses.AuxiliaryFunctions.inputDouble;
-import static org.example.Interpolation.MethodsErrorInterpolationMethods.ErrorByLagrangeMethod.estimateErrorByLagrange;
-import static org.example.Interpolation.MethodsErrorInterpolationMethods.ErrorByNewtonMethod.estimateErrorByNewton;
-import static org.example.Interpolation.MethodsInterpolation.InterpolationLagrange.interpolateByLagrange;
-import static org.example.Interpolation.MethodsInterpolation.InterpolationNewton.interpolateByNewton;
+import static org.example.Interpolation.ErrorInterpolationMethod.computeErrors;
+import static org.example.Interpolation.InterpolationMethod.interpolateAndPrint;
 import static org.example.Interpolation.initializingXandY.InitArrayX.fillArrayX;
 import static org.example.Interpolation.initializingXandY.InitArrayX.fillArrayXFromFile;
 import static org.example.Interpolation.initializingXandY.InitArrayY.fillArrayY;
@@ -43,16 +41,8 @@ public class MainInterpolation {
             }
             case 3: {
                 x0 = inputDouble("Введите точку x0");
-
-                System.out.println(interpolateByLagrange(arrayX, arrayY, x0));
-                System.out.println("Погрешность метода Лагранжа " + estimateErrorByLagrange(arrayX, arrayY, x0));
-                break;
-            }
-            case 4: {
-                x0 = inputDouble("Введите точку x0");
-
-                System.out.println(interpolateByNewton(arrayX, arrayY, x0));
-                System.out.println("Погрешность метода Ньютона " + estimateErrorByNewton(arrayX, arrayY, x0));
+                interpolateAndPrint(x0,arrayX,arrayY);
+                computeErrors(x0,arrayX,arrayY);
                 break;
             }
         }
@@ -66,8 +56,8 @@ public class MainInterpolation {
         System.out.println("0.Выйти");
         System.out.println("1.Вывести табличные значения x и y");
         System.out.println("2.Вввести новые табличные значения x и y");
-        System.out.println("3.Вычеслить значение в т.x0 c помощью метода Лагранжа");
-        System.out.println("4.Вычеслить значение в т.x0 c помощью метода Ньютона");
+        System.out.println("3.С помощью интерполяционных многочленов степени от 1 до 4 найти значения функции, в т.x0");
+
         return scanner.nextInt();
     }
 

@@ -13,14 +13,12 @@ import static org.example.CauchyProblem.FunctionTwoVariables.*;
 public class EulerMethod {
 
     // Метод Эйлера
-    public static Map<String, List<Double>> euler(String functionString, double[] limits, double h) throws ScriptException {
+    public static Map<String, List<Double>> euler(String functionString, double[] limits, double h, double y0) throws ScriptException {
         List<Double> x1 = new ArrayList<>();
         List<Double> y1 = new ArrayList<>();
 
         double x0 = limits[0];
         double xLast = limits[1];
-
-        double y0 = writeY(x0);
 
         x1.add(x0);
         y1.add(y0);
@@ -29,7 +27,6 @@ public class EulerMethod {
 
         int n = (int) Math.round((xLast - x0) / h);
 
-        System.out.println("Метод Эйлера");
         for (int i = 0; i < n; i++) {
             double f = evaluateFunctionTwoVariables(functionString, x0, y0);
             y0 = y0 + h * f;
@@ -37,8 +34,6 @@ public class EulerMethod {
 
             x1.add(x0);
             y1.add(y0);
-
-            System.out.println("Step " + (i + 1) + ": x = " + x0 + ", y = " + y0);
         }
 
         Map<String, List<Double>> result = new HashMap<>();

@@ -1,6 +1,7 @@
 package org.example.GlobalClasses;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -51,5 +52,14 @@ public class AuxiliaryFunctions {
             array[i] = list.get(i);
         }
         return array;
+    }
+    public static void printResults(Map<String, List<Double>> results) {
+        List<Double> x = results.get("x1");
+        List<Double> y = results.get("y1");
+
+        System.out.println("Results:");
+        for (int i = 0; i < x.size(); i++) {
+            System.out.println("Step " + (i + 1) + ": x = " + x.get(i) + ", y = " + y.get(i));
+        }
     }
 }

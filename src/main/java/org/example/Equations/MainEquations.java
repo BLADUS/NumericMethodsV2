@@ -52,12 +52,13 @@ public class MainEquations {
                 EPS = writeEPS();
                 System.out.println(SimpleIterationMethod.iteration(functionString, EPS, limits));
                 break;
-            }case 6: {
+            }
+            case 6: {
                 EPS = writeEPS();
-                System.out.println(NewtonMethod.secant(functionString,EPS,limits));
+                System.out.println(NewtonMethod.secant(functionString, EPS, limits));
                 break;
             }
-            default:{
+            default: {
                 mainMenu();
                 break;
             }

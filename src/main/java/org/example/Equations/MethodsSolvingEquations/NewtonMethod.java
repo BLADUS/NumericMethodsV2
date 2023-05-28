@@ -11,7 +11,7 @@ import static org.example.GlobalClasses.Function.evaluate;
  * @date 09.05.2023 23:09
  */
 public class NewtonMethod {
-    public static double secant(String functionString,double EPS,double[] limits) throws ScriptException {
+    public static double secant(String functionString, double EPS, double[] limits) throws ScriptException {
         String firstDerivative = Derivative.takeDerivative(functionString);
         String secondDerivative = Derivative.takeDerivative(firstDerivative);
 
@@ -31,19 +31,19 @@ public class NewtonMethod {
 
         int count = 0;
 
-        if (valueLeftBoundFunction * valueLeftBoundSecondDerivative > 0){
+        if (valueLeftBoundFunction * valueLeftBoundSecondDerivative > 0) {
             x0 = leftBoundary;
-        }else if (valueRightBoundFunction * valueRightBoundSecondDerivative > 0){
+        } else if (valueRightBoundFunction * valueRightBoundSecondDerivative > 0) {
             x0 = rightBoundary;
-        }else {
+        } else {
             System.out.println("Неверно выбран начальный интревал!");
             return Double.NaN;
         }
 
-        double x = x0 - (evaluate(functionString,x0) / evaluate(firstDerivative,x0));
-        while(Math.abs(x - x0) >= EPS){
-            x0 = x - (evaluate(functionString,x)/evaluate(firstDerivative,x));
-            x = x0 - (evaluate(functionString,x0)/evaluate(firstDerivative,x0));
+        double x = x0 - (evaluate(functionString, x0) / evaluate(firstDerivative, x0));
+        while (Math.abs(x - x0) >= EPS) {
+            x0 = x - (evaluate(functionString, x) / evaluate(firstDerivative, x));
+            x = x0 - (evaluate(functionString, x0) / evaluate(firstDerivative, x0));
             count++;
         }
         System.out.println("Кол-во шагов: " + count);
