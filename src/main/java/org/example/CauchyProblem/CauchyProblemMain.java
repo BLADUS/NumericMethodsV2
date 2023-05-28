@@ -54,21 +54,18 @@ public class CauchyProblemMain {
         // Вывод результатов
         System.out.println("Метод Эйлера:");
         printResults(resultEuler);
-
-        System.out.println("Улучшенный метод Эйлера:");
-        printResults(resultModifiedEuler);
-
-        System.out.println("Метод Рунге-Кутты 4го порядка:");
-        printResults(resultRungeKutta4);
-
         // Расчет погрешности для метода Эйлера
         double eulerError = calculateEulerError(functionString, limits, h, y0);
         System.out.println("Погрешность метода Эйлера: " + eulerError);
 
+        System.out.println("Улучшенный метод Эйлера:");
+        printResults(resultModifiedEuler);
         // Расчет погрешности для усовершенствованного метода Эйлера
         double modifiedEulerError = calculateModifiedEulerError(functionString, limits, h, y0);
         System.out.println("Погрешность усовершенствованного метода Эйлера: " + modifiedEulerError);
 
+        System.out.println("Метод Рунге-Кутты 4го порядка:");
+        printResults(resultRungeKutta4);
         // Расчет погрешности для метода Рунге-Кутты 4-го порядка
         double rungeKutta4Error = calculateRungeKutta4Error(functionString, limits, h, y0);
         System.out.println("Погрешность метода Рунге-Кутты 4-го порядка: " + rungeKutta4Error);

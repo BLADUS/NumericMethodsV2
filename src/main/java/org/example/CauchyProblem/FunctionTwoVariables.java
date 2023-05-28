@@ -52,7 +52,7 @@ public class FunctionTwoVariables {
 
     public static String writeFunctionTwoVariables() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите функцию двух переменных (например,y-5x+1): ");
+        System.out.print("Введите функцию двух переменных (например,y-x^2): ");
         return scanner.nextLine();
     }
 
