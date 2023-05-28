@@ -52,13 +52,13 @@ public class CauchyProblemMain {
         List<Double> y3 = resultRungeKutta4.get("y1");
 
         // Вывод результатов
-        System.out.println("Euler's Method:");
+        System.out.println("Метод Эйлера:");
         printResults(resultEuler);
 
-        System.out.println("Modified Euler's Method:");
+        System.out.println("Улучшенный метод Эйлера:");
         printResults(resultModifiedEuler);
 
-        System.out.println("Runge-Kutta 4th Order Method:");
+        System.out.println("Метод Рунге-Кутты 4го порядка:");
         printResults(resultRungeKutta4);
 
         // Расчет погрешности для метода Эйлера
@@ -75,9 +75,9 @@ public class CauchyProblemMain {
 
         // Создание датасета
         DefaultXYDataset dataset = new DefaultXYDataset();
-        dataset.addSeries("Function 1", new double[][]{toArray(x1), toArray(y1)});
-        dataset.addSeries("Function 2", new double[][]{toArray(x2), toArray(y2)});
-        dataset.addSeries("Function 3", new double[][]{toArray(x3), toArray(y3)});
+        dataset.addSeries("Метод Эйлера", new double[][]{toArray(x1), toArray(y1)});
+        dataset.addSeries("Улучшенный метод Эйлера", new double[][]{toArray(x2), toArray(y2)});
+        dataset.addSeries("Метод Рунге-Кутты 4го порядка:", new double[][]{toArray(x3), toArray(y3)});
 
         // Создание графика
         JFreeChart chart = ChartFactory.createXYLineChart(
